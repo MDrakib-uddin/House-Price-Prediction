@@ -26,7 +26,7 @@ function onClickedEstimatePrice() {
   var location = document.getElementById("uiLocations");
   var estPrice = document.getElementById("uiEstimatedPrice");
 
-  var url = "http://127.0.0.1:5000/api/predict_home_price"; //Use this if you are NOT using nginx which is first 7 tutorials
+  var url = "https://house-price-prediction-production.up.railway.app/api/predict_home_price"; // Railway backend URL
 
   $.post(url, {
       total_sqft: parseFloat(sqft.value),
@@ -42,7 +42,7 @@ function onClickedEstimatePrice() {
 
 function onPageLoad() {
   console.log( "document loaded" );
-  var url = "http://127.0.0.1:5000/api/get_location_names"; // Use this if you are NOT using nginx which is first 7 tutorials
+  var url = "https://house-price-prediction-production.up.railway.app/api/get_location_names"; // Railway backend URL
   $.get(url,function(data, status) {
       console.log("got response for get_location_names request");
       if(data) {
